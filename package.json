@@ -4,9 +4,12 @@
   "description": "A demo of things you can do with webpack.",
   "main": "index.js",
   "dependencies": {
+    "6to5": "^1.10.12",
+    "6to5-loader": "^0.2.3",
     "css-loader": "~0.9.0",
     "html-loader": "~0.2.3",
-    "style-loader": "~0.8.2"
+    "style-loader": "~0.8.2",
+    "webpack": "^1.4.13"
   },
   "devDependencies": {},
   "scripts": {

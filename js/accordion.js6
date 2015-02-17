@@ -1,0 +1,9 @@
+export class Accordion {
+  constructor(name) {
+    this.name = name;
+  }
+
+  render() {
+    this.foo = "bar";
+  }
+}

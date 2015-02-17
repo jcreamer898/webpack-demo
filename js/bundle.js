@@ -53,10 +53,13 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require) {
-	    var html = __webpack_require__(3),
-	        handlebars = __webpack_require__(5),
-	        styles = __webpack_require__(7),
+	    var html = __webpack_require__(6),
+	        handlebars = __webpack_require__(2),
+	        styles = __webpack_require__(4),
 	        template = handlebars.compile(html);
+
+	    var Accordion = __webpack_require__(3);
+	    console.log(Accordion);
 
 	    var div = document.createElement("div");
 
@@ -76,15 +79,7 @@
 
 
 /***/ },
-/* 2 */,
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = "<div>{{msg}}</div>";
-
-/***/ },
-/* 4 */,
-/* 5 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -3169,22 +3164,55 @@
 
 
 /***/ },
-/* 6 */,
-/* 7 */
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var _classProps = function(child, staticProps, instanceProps) {
+	  if (staticProps)
+	    Object.defineProperties(child, staticProps);
+
+	  if (instanceProps)
+	    Object.defineProperties(child.prototype, instanceProps);
+	};
+
+	var Accordion = function() {
+	  var Accordion = function Accordion() {
+	    this.name = "foo";
+	  };
+
+	  _classProps(Accordion, null, {
+	    render: {
+	      writable: true,
+
+	      value: function() {
+
+	      }
+	    }
+	  });
+
+	  return Accordion;
+	}();
+
+	exports.default = Accordion;
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(8);
+	var content = __webpack_require__(5);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
+	var update = __webpack_require__(7)(content, {});
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
-		module.hot.accept("!!/Users/jonathancreamer/Projects/Temp/webpack/node_modules/css-loader/index.js!/Users/jonathancreamer/Projects/Temp/webpack/css/alert.css", function() {
-			var newContent = require("!!/Users/jonathancreamer/Projects/Temp/webpack/node_modules/css-loader/index.js!/Users/jonathancreamer/Projects/Temp/webpack/css/alert.css");
+		module.hot.accept("!!/Users/jonathanc/Projects/jcreamer898/webpack-demo/node_modules/css-loader/index.js!/Users/jonathanc/Projects/jcreamer898/webpack-demo/css/alert.css", function() {
+			var newContent = require("!!/Users/jonathanc/Projects/jcreamer898/webpack-demo/node_modules/css-loader/index.js!/Users/jonathanc/Projects/jcreamer898/webpack-demo/css/alert.css");
 			if(typeof newContent === 'string') newContent = [module.id, newContent, ''];
 			update(newContent);
 		});
@@ -3193,14 +3221,20 @@
 	}
 
 /***/ },
-/* 8 */
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(10)();
+	exports = module.exports = __webpack_require__(8)();
 	exports.push([module.id, ".alert {\n    outline: 1px solid red;\n}", ""]);
 
 /***/ },
-/* 9 */
+/* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = "<div>{{msg}}</div>";
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -3396,7 +3430,7 @@
 
 
 /***/ },
-/* 10 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function() {

@@ -1,20 +1,21 @@
 define(function(require) {
     var html = require("templates/alert.tmpl.html"),
-        handlebars = require("bower_components/handlebars/handlebars"),
-        styles = require("../css/alert.css"),
+        handlebars = require("handlebars/handlebars"),
+        styles = require("alert.css"),
         template = handlebars.compile(html);
+
+    var Accordion = require("accordion.js6").Accordion;
 
     var div = document.createElement("div");
 
-    var alerts = document.querySelectorAll(".alert");
+    var alerts = document.querySelectorAll("lp-alert");
 
     Array.prototype.forEach.call(alerts, function(alert) {
-        var data = alert.dataset["lp-alert"];
+        var data = alert.attributes["msg"].value;
 
-        console.log(typeof data);
-        console.log(alert);
-
-        alert.innerHTML = template(data);
+        alert.innerHTML = template({
+            msg: data
+        });
     });
 
     return;
